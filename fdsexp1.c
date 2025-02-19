@@ -11,7 +11,7 @@ int main()
      
     struct book b[10];
     int n,ch,i,pos,old_bno;
-    printf("enter the number of students information you want");
+    printf("enter the number of books information you want");
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
