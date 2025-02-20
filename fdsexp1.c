@@ -16,7 +16,7 @@ int main()
     for(i=0;i<n;i++)
     {
         printf("enter the book no %d details\n ",i+1);
-        printf("enter the book name\nenter the book no\n");
+        printf("enter the book name\nenter the book no\n\n");
         scanf("%s%d",b[i].bname,&b[i].bno);
     }
     while(1)
@@ -39,13 +39,16 @@ int main()
     {
         b[i]=b[i-1];
     }
-    printf("enter a new book data");
+    printf("enter a new book data\n");
+    printf("enter the name and book no.\n");
     scanf("%s%d",b[pos-1].bname,&b[pos-1].bno);
-    printf("updated book list is\n");
+    printf("updated book list is\n\n");
     for(i=0;i<n+1;i++)
     {
         printf("the name of book%d is%s\nthe no. of book is %d\n",i+1,b[i].bname,b[i].bno);
+       
     }
+    n++;
   break;
 case 2:
 printf("enter the position that you want to delete from (1 to %d)",n);
@@ -64,6 +67,7 @@ for(i=0;i<n-1;i++)
 {
     printf("the name of book%d is%s\nthe no. of book is %d\n",i+1,b[i].bname,b[i].bno);  
 }
+n--;
 break;
 case 3:
 printf("enter the book no you want to update\n");
