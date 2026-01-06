@@ -34,16 +34,38 @@ class circularLL{
         }
 
     }
+    void deleteAthead()
+    {
+        node*temp=head;
+        if(head==NULL)
+        {
+            return ;
+        }
+        else if(head==tail)
+        {
+            delete head;
+            head=tail=NULL;
+        }
+        else
+        {
+            head=head->next;
+            tail->next=head;
+            temp->next=NULL;
+            delete temp;
+        }
+    }
     void display()
     {
         if(head==NULL)
         return;
+        cout<<head->data;
         node*temp=head->next;
         while(temp!=head)
         {
-            cout<<temp->data<<" ";
+            cout<<" "<<temp->data<<" ";
             temp=temp->next;
         }
+        cout<<temp->data<<endl;
     }
 };
 int main()
@@ -54,6 +76,8 @@ int main()
     cll.insertAtHead(30);
     cll.insertAtHead(40);
     cll.display();
+    cll.deleteAthead();
+     cll.display();
     return 0;
 
 }
