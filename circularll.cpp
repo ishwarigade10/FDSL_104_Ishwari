@@ -54,6 +54,29 @@ class circularLL{
             delete temp;
         }
     }
+    void deleteattail()
+    {
+        node*temp=tail;
+        node* prev=head;
+        if(head==NULL)
+        {
+            return;
+        }
+        else if(head==tail)
+        {
+            delete head;
+            head=tail=NULL;
+        }
+        else{
+        while(prev->next!=temp)
+        {
+            prev=prev->next;
+        }
+        tail=prev;
+        tail->next=head;
+        delete temp;
+      }
+    }
     void display()
     {
         if(head==NULL)
@@ -77,6 +100,8 @@ int main()
     cll.insertAtHead(40);
     cll.display();
     cll.deleteAthead();
+     cll.display();
+     cll.deleteattail();
      cll.display();
     return 0;
 
